@@ -367,7 +367,87 @@ footer a:hover{color:var(--gold)}
     </div>
   </div>
 </section>
-
+  <!-- ====== SECCIÓN BLOG ====== -->
+<section id="blog" style="padding:5rem 2rem;background:rgba(200,164,86,0.02);border-top:1px solid rgba(200,164,86,0.12)">
+  <div class="container">
+    <div class="sec-label">Blog &amp; Consejos</div>
+    <h2>Guías para que tu <em>fiesta sea perfecta</em></h2>
+    <p style="font-size:0.92rem;color:rgba(240,234,216,0.5);margin-top:0.8rem;max-width:500px;line-height:1.75">
+      Consejos, ideas y todo lo que necesitas saber para organizar el cumpleaños que mereces.
+    </p>
+ 
+    <div id="blog-grid" style="
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1px;
+      background:rgba(200,164,86,0.1);
+      border:1px solid rgba(200,164,86,0.1);
+      margin-top:3rem;
+    "></div>
+ 
+    <div style="text-align:center;margin-top:2rem">
+      <a href="/blog/" style="
+        font-size:0.72rem;
+        letter-spacing:0.15em;
+        text-transform:uppercase;
+        color:rgba(200,164,86,0.55);
+        text-decoration:none;
+        border-bottom:1px solid rgba(200,164,86,0.25);
+        padding-bottom:2px;
+        transition:color 0.2s;
+      ">Ver todos los artículos →</a>
+    </div>
+  </div>
+</section>
+ 
+<!-- ====== SCRIPT QUE CARGA LOS POSTS ====== -->
+<script>
+const posts = [
+  {
+    slug: "dj-cumpleanos-coruna-precios",
+    titulo: "DJ para cumpleaños en A Coruña: precios y qué incluye",
+    extracto: "Todo lo que necesitas saber antes de contratar un DJ para tu celebración. Equipo, duración, y precio real desde 300€.",
+    fecha: "Marzo 2025",
+    emoji: "🎧"
+  },
+  {
+    slug: "dj-cumpleanos-40-50-60-anos",
+    titulo: "DJ para cumpleaños de 40, 50 y 60 años en Galicia",
+    extracto: "Los cumpleaños importantes merecen música especial. Cómo crear el ambiente perfecto para cada generación.",
+    fecha: "Febrero 2025",
+    emoji: "🎉"
+  },
+  {
+    slug: "dj-cumpleanos-18-anos-coruna",
+    titulo: "DJ para cumpleaños de 18 años en A Coruña",
+    extracto: "La mayoría de edad merece una fiesta épica. Te contamos cómo organizar la noche perfecta con DJ profesional.",
+    fecha: "Enero 2025",
+    emoji: "🔥"
+  }
+];
+ 
+const grid = document.getElementById('blog-grid');
+posts.forEach(post => {
+  grid.innerHTML += `
+    <a href="/blog/${post.slug}.html" style="
+      background:#080808;
+      padding:2.2rem;
+      text-decoration:none;
+      display:block;
+      transition:background 0.2s;
+      border-right:none;
+    " onmouseover="this.style.background='rgba(200,164,86,0.04)'"
+       onmouseout="this.style.background='#080808'">
+      <div style="font-size:1.8rem;margin-bottom:1.2rem">${post.emoji}</div>
+      <div style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,164,86,0.5);margin-bottom:0.8rem">${post.fecha}</div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:#f0ead8;line-height:1.2;margin-bottom:0.8rem">${post.titulo}</h3>
+      <p style="font-size:0.84rem;color:rgba(240,234,216,0.45);line-height:1.7;margin-bottom:1.2rem">${post.extracto}</p>
+      <span style="font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:#c8a456">Leer más →</span>
+    </a>
+  `;
+});
+</script>
+<!-- ====== FIN SECCIÓN BLOG ====== -->
 <footer>
   <div class="footer-logo">DJ <span>Ponte</span></div>
   <div class="footer-links">
